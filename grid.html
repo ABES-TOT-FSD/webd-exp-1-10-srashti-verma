@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Responsive Grid Webpage</title>
+    <style>
+        .prod1,.prod2,.prod3,.prod4{
+           
+           height: 140px;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           box-shadow: 1px 1px 8px;
+           border-radius: 8px;
+        }
+        .img-container{
+            
+            display: inline-block;
+            margin-top: 10px;
+       }
+        .in-bold{
+            margin-top: 15px;
+            font-weight: bolder;
+            font-size: larger;
+        }
+        .description{
+            margin-top: 10px;
+            color: rgb(94, 87, 87);
+        }
+        .price{
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        .grid{
+            display:grid;grid-template-columns: 300px 300px 300px 300px;column-gap:10px;justify-content: center;
+        }
+        @media (min-width:1024px) {
+            .grid{
+                grid-template-columns:300px 300px 300px 300px;
+            }
+        }
+        @media (min-width:600px) and (max-width:1024px){
+            .grid{
+                grid-template-columns:300px 300px;
+            }
+        }
+        @media (max-width:600px){
+            .grid{
+                grid-template-columns:300px;
+            }
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="prod1">
+            <div class="img-container"><img alt="Product1"></div>
+            <div class="in-bold">Product 1</div>
+            <div class="description">High-quality item with great features.</div>
+            <div class="price">&euro;488</div>
+        </div>
+        <div class="prod2">
+            <div class="img-container"><img alt="Product2"></div>
+            <div class="in-bold">Product 2</div>
+            <div class="description">Durable and Stylish for daily use.</div>
+            <div class="price">&euro;788</div>
+        </div>
+        <div class="prod3">
+            <div class="img-container"><img alt="Product3"></div>
+            <div class="in-bold">Product 3</div>
+            <div class="description">Lightweight and comfortable.</div>
+            <div class="price">&euro;1,289</div>
+        </div>
+        <div class="prod4">
+            <div class="img-container"><img alt="Product4"></div>
+            <div class="in-bold">Product 4</div>
+            <div class="description">Trendy design with premium quality.</div>
+            <div class="price">&euro;999</div>
+        </div>
+    </div>
+</body>
+</html>

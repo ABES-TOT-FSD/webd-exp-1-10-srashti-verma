@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Hide checkbox */
+        #menu-toggle {
+            display: none;
+        }
+
+        /* Header styling */
+        .header {
+            background-color: #2c2c2c;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Logo section */
+        .left-section {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Hamburger icon - hidden by default */
+        .hamburger {
+            display: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* Middle section - menu links */
+        .middle-section {
+            display: flex;
+            gap: 30px;
+        }
+
+        .middle-section a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .middle-section a:hover {
+            color: #ddd;
+        }
+
+        /* Right section - Cart and Login */
+        .right-section {
+            display: flex;
+            gap: 15px;
+        }
+
+        .right-section a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .right-section a:hover {
+            color: #ddd;
+        }
+
+        /* Content area */
+        .content {
+            padding: 30px;
+        }
+
+        .content h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            color: #666;
+        }
+
+        /* MOBILE STYLES - Media Query */
+        @media (max-width: 768px) {
+            /* Show hamburger icon */
+            .hamburger {
+                display: block;
+                order: 2;
+            }
+
+            /* Hide middle section by default */
+            .middle-section {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #3c3c3c;
+                padding: 0;
+                gap: 0;
+                z-index: 1000;
+            }
+
+            .middle-section a {
+                padding: 15px 20px;
+                border-bottom: 1px solid #2c2c2c;
+            }
+
+            /* Show menu when checkbox is checked */
+            #menu-toggle:checked ~ .header .middle-section {
+                display: flex;
+            }
+
+            /* Right section below menu */
+            .right-section {
+                order: 3;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hidden checkbox for menu toggle -->
+    <input type="checkbox" id="menu-toggle">
+
+    <!-- Header/Navbar -->
+    <div class="header">
+        <div class="left-section">ShopEase</div>
+        
+        <!-- Hamburger icon -->
+        <label for="menu-toggle" class="hamburger">☰</label>
+        
+        <!-- Middle menu links -->
+        <div class="middle-section">
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">Categories</a>
+            <a href="#">Deals</a>
+            <a href="#">Contact</a>
+        </div>
+        
+        <!-- Right section - Cart and Login -->
+        <div class="right-section">
+            <a href="#">Cart 🛒</a>
+            <a href="#">Login</a>
+        </div>
+    </div>
+
+    <!-- Page content -->
+    <div class="content">
+        <h1>Welcome to ShopEase!</h1>
+        <p>Your one-stop destination for all shopping needs.</p>
+    </div>
+</body>
+</html>
